@@ -95,6 +95,7 @@ export function getSwag() {
 }
 
 export function searchSwag( category ) {
+  console.log(category)
   return {
     type: SEARCH_SWAG,
     payload: axios.get( `${URL.search}?category=${category}` ).then( response => response.data )
@@ -104,7 +105,10 @@ export function searchSwag( category ) {
 export function addToCart( id ) {
   return {
     type: ADD_TO_CART,
-    payload: axios.post( `${URL.cart}?id=${id}` ).then( response => response.data )
+    payload: axios.post( `${URL.cart}?id=${id}` ).then( response => {
+      console.log(response.data)
+      return response.data
+    })
   };
 }
 

@@ -47,6 +47,7 @@ class Search extends Component {
             <CartIcon id="Search__cartIcon" />
           </div>
         </div>
+        {console.log(this.state.category)}
       </div>
     )
   }
